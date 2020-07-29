@@ -19,7 +19,15 @@ def init_client(sock):
     # Listen for packets
     while True:
         data = sock.recv(1024)
-        print(data.decode("utf-8"), end="")
+        raw_key = data.decode("utf-8")
+
+        # Parse special keys
+        if raw_key == "space": key = " "
+        elif raw_key == "backspace": key = "\b"
+        else: key = raw_key
+
+        # Output key to the terminal
+        print(key, end="")
 
         # Some terminals require this
         sys.stdout.flush()
