@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 #
 # Created by Kees van Voorthuizen
 # GH: @keesvv
